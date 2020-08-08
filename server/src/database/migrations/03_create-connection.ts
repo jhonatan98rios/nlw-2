@@ -11,7 +11,7 @@ export async function up(knex: Knex) {
       .onUpdate('CASCADE') // Oq ocorre em caso de atualização
       .onDelete('CASCADE') // Oq ocorre em caso de exclusão
 
-    table.timestamp('created_at').defaultTo('now()').notNullable()
+    table.timestamp('created_at').defaultTo(knex.raw('CURRENT_TIMESTAMP')).notNullable()
   })
 }
 
