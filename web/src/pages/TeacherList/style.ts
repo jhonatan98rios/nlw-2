@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import styleOption from '../../assets/styles/style.js'
-
-let isDark = false
 
 export const Container = styled.div`
   #page-teacher-list{
@@ -14,14 +11,14 @@ export const Container = styled.div`
   }
 
   #search-teachers label{
-    color: ${ !isDark ? styleOption.style.colorTextInPrimary : styleOption.styleDark.colorTextInPrimary };  /* var(--color-text-in-primary); */
+    color: ${ props => props.theme.colors.colorTextInPrimary };  /* var(--color-text-in-primary); */
   }
 
   #search-teachers button {
     width: 100%;
     height: 5.6rem;
-    background: ${ !isDark ? styleOption.style.colorSecondary : styleOption.styleDark.colorSecondary };  /* var(--color-secondary); */
-    color: ${ !isDark ? styleOption.style.colorButtonText : styleOption.styleDark.colorButtonText };  /* var(--color-button-text); */
+    background: ${ props => props.theme.colors.colorSecondary };  /* var(--color-secondary); */
+    color: ${ props => props.theme.colors.colorButtonText };  /* var(--color-button-text); */
     border: 0;
     border-radius: 0.8rem;
     cursor: pointer;
@@ -36,7 +33,7 @@ export const Container = styled.div`
   }
 
   #search-teachers button:hover {
-    background: ${ !isDark ? styleOption.style.colorSecondaryDark : styleOption.styleDark.colorSecondaryDark };  /* var(--color-secondary-dark); */
+    background: ${ props => props.theme.colors.colorSecondaryDark };  /* var(--color-secondary-dark); */
   }
 
   #page-teacher-list main{

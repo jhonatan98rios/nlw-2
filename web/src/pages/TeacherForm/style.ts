@@ -1,9 +1,4 @@
 import styled from 'styled-components';
-import styleOption from '../../assets/styles/style.js'
-
-let isDark = true
-
-/* ${ !isDark ? styleOption.style : styleOption.styleDark }; */
 
 export const Container = styled.div`
   
@@ -17,7 +12,7 @@ export const Container = styled.div`
   }
 
   #page-teacher-form main {
-    background-color: ${ !isDark ? styleOption.style.colorBoxBase : styleOption.styleDark.colorBoxBase }; /* var(--color-box-base); */
+    background-color: ${ props => props.theme.colors.colorBoxBase }; /* var(--color-box-base); */
     width: 100%;
     max-width: 74rem;
     border-radius: 0.8rem;
@@ -37,27 +32,27 @@ export const Container = styled.div`
 
   #page-teacher-form main fieldset legend {
     font: 700 2.4rem Arial;
-    color: ${ !isDark ? styleOption.style.colorTextTitle : styleOption.styleDark.colorTextTitle }; /* var(--color-text-title); */
+    color: ${ props => props.theme.colors.colorTextTitle }; /* var(--color-text-title); */
     margin-bottom: 2.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding-bottom: 1.6rem;
-    border-bottom: 1px solid ${ !isDark ? styleOption.style.colorLineInWhite : styleOption.styleDark.colorLineInWhite }; /* var(--color-line-in-white); */
+    border-bottom: 1px solid ${ props => props.theme.colors.colorLineInWhite }; /* var(--color-line-in-white); */
   }
 
   #page-teacher-form main fieldset legend button {
     background: none;
     border: 0;
-    color: ${ !isDark ? styleOption.style.colorPrimary : styleOption.styleDark.colorPrimary }; /* var(--color-primary); */
+    color: ${ props => props.theme.colors.colorPrimary }; /* var(--color-primary); */
     font: 700 1.6rem;
     cursor: pointer;
     transition: color 0.2s;
   }
 
   #page-teacher-form main fieldset legend button:hover{
-    color: ${ !isDark ? styleOption.style.colorPrimaryDark : styleOption.styleDark.colorPrimaryDark }; /* var(--color-primary-dark) */
+    color: ${ props => props.theme.colors.colorPrimaryDark }; /* var(--color-primary-dark) */
   }
 
   #page-teacher-form main fieldset .input-block + .textarea-block,
@@ -66,13 +61,13 @@ export const Container = styled.div`
   }
 
   #page-teacher-form main label {
-    color: ${ !isDark ? styleOption.style.colorTextComplement : styleOption.styleDark.colorTextComplement }; /* var(--color-text-complement); */
+    color: ${ props => props.theme.colors.colorTextComplement }; /* var(--color-text-complement); */
   }
 
   #page-teacher-form main footer {
     padding: 4rem 2.4rem;
-    background: ${ !isDark ? styleOption.style.colorBoxFooter : styleOption.styleDark.colorBoxFooter }; /* var(--color-box-footer); */
-    border-top: 1px solid ${ !isDark ? styleOption.style.colorLineInWhite : styleOption.styleDark.colorLineInWhite }; /* var(--color-line-in-white); */
+    background: ${ props => props.theme.colors.colorBoxFooter }; /* var(--color-box-footer); */
+    border-top: 1px solid ${ props => props.theme.colors.colorLineInWhite }; /* var(--color-line-in-white); */
     margin-top: 6.4rem;
   }
 
@@ -82,7 +77,7 @@ export const Container = styled.div`
     justify-content: center;
     font-size: 1.4rem;
     line-height: 2.4rem;
-    color: ${ !isDark ? styleOption.style.colorTextComplement : styleOption.styleDark.colorTextComplement }; /* var(--color-text-complement) */
+    color: ${ props => props.theme.colors.colorTextComplement }; /* var(--color-text-complement) */
   }
 
   #page-teacher-form main footer p img{
@@ -92,8 +87,8 @@ export const Container = styled.div`
   #page-teacher-form main footer button {
     width: 100%;
     height: 5.6rem;
-    background: ${ !isDark ? styleOption.style.colorSecondary : styleOption.styleDark.colorSecondary }; /* var(--color-secondary); */
-    color: ${ !isDark ? styleOption.style.colorButtonText : styleOption.styleDark.colorButtonText }; /* var(--color-button-text); */
+    background: ${ props => props.theme.colors.colorSecondary }; /* var(--color-secondary); */
+    color: ${ props => props.theme.colors.colorButtonText }; /* var(--color-button-text); */
     border: 0;
     border-radius: 0.8rem;
     cursor: pointer;
@@ -107,7 +102,7 @@ export const Container = styled.div`
   }
 
   #page-teacher-form main footer button:hover {
-    background: ${ !isDark ? styleOption.style.colorSecondaryDark : styleOption.styleDark.colorSecondaryDark }; /* var(--color-secondary-dark); */
+    background: ${ props => props.theme.colors.colorSecondaryDark }; /* var(--color-secondary-dark); */
   }
 
   @media(min-width: 700px){

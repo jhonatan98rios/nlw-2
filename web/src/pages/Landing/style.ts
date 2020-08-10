@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import styleOption from '../../assets/styles/style.js'
-
-let isDark = true
 
 export const Container = styled.div`
 
@@ -13,8 +10,8 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    color: ${ !isDark ? styleOption.style.colorTextInPrimary : styleOption.styleDark.colorTextInPrimary };
-    background: ${ !isDark ? styleOption.style.colorPrimary : styleOption.styleDark.colorPrimary };
+    color: ${ props => props.theme.colors.colorTextInPrimary };
+    background: ${ props => props.theme.colors.colorPrimary };
   }
 
   .logo-container img {
@@ -53,7 +50,7 @@ export const Container = styled.div`
     justify-content: center;
 
     text-decoration: none;
-    color: ${ isDark ? styleOption.style.colorButtonText : styleOption.styleDark.colorButtonText };
+    color: ${ props => props.theme.colors.colorButtonText };
 
     transition: all 0.2s;
   }
@@ -68,19 +65,19 @@ export const Container = styled.div`
   }
 
   .buttons-container a.study {
-    background: ${ isDark ? styleOption.style.colorPrimaryLight : styleOption.styleDark.colorPrimaryLight };
+    background: ${ props => props.theme.colors.colorPrimaryLight };
   }
 
   .buttons-container a.give-classes {
-    background: ${ isDark ? styleOption.style.colorSecondary : styleOption.styleDark.colorSecondary };
+    background: ${ props => props.theme.colors.colorSecondary };
   }
 
   .buttons-container a.study:hover {
-    background: ${ isDark ? styleOption.style.colorPrimaryLighter : styleOption.styleDark.colorPrimaryLighter };
+    background: ${ props => props.theme.colors.colorPrimaryLighter };
   }
 
   .buttons-container a.give-classes:hover {
-    background: ${ isDark ? styleOption.style.colorSecondaryDark : styleOption.styleDark.colorSecondaryDark };
+    background: ${ props => props.theme.colors.colorSecondaryDark };
   }
 
   .total-connections {

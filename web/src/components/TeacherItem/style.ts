@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-import styleOption from '../../assets/styles/style.js'
-
-let isDark = true
 
 export const Container = styled.div`
   .teacher-item{
-    background: ${ !isDark ? styleOption.style.colorBoxBase : styleOption.styleDark.colorBoxBase }; /* var(--color-box-base); */
-    border: 1px solid ${ !isDark ? styleOption.style.colorLineInWhite : styleOption.styleDark.colorLineInWhite }; /* var(--color-line-in-white); */
+    background: ${ props => props.theme.colors.colorBoxBase }; /* var(--color-box-base); */
+    border: 1px solid ${ props => props.theme.colors.colorLineInWhite }; /* var(--color-line-in-white); */
     border-radius: 0.8rem;
     margin-top: 2.4rem;
     overflow: hidden;
@@ -31,7 +28,7 @@ export const Container = styled.div`
   .teacher-item header div strong{
     font: 700 2.4rem Arial;
     display: block;
-    color: ${ !isDark ? styleOption.style.colorTextTitle : styleOption.styleDark.colorTextTitle }; /* var(--color-text-title); */
+    color: ${ props => props.theme.colors.colorTextTitle }; /* var(--color-text-title); */
   }
 
   .teacher-item header div span{
@@ -48,8 +45,8 @@ export const Container = styled.div`
 
   .teacher-item footer{
     padding: 3.2rem 2rem;
-    background: ${ !isDark ? styleOption.style.colorBoxFooter : styleOption.styleDark.colorBoxFooter }; /* var(--color-box-footer); */
-    border-top: 1px solid ${ !isDark ? styleOption.style.colorLineInWhite : styleOption.styleDark.colorLineInWhite }; /* var(--color-line-in-white); */
+    background: ${ props => props.theme.colors.colorBoxFooter }; /* var(--color-box-footer); */
+    border-top: 1px solid ${ props => props.theme.colors.colorLineInWhite }; /* var(--color-line-in-white); */
     margin-top: 3.2rem;
     display: flex;
     align-items: center;
@@ -57,7 +54,7 @@ export const Container = styled.div`
   }
 
   .teacher-item footer p strong{
-    color: ${ !isDark ? styleOption.style.colorPrimary : styleOption.styleDark.colorPrimary }; /* var(--color-primary); */
+    color: ${ props => props.theme.colors.colorPrimary }; /* var(--color-primary); */
     font-size: 1.6rem;
     display: block;
   }
@@ -65,8 +62,8 @@ export const Container = styled.div`
   .teacher-item footer a{
     width: 20rem;
     height: 5.6rem;
-    background: ${ !isDark ? styleOption.style.colorSecondary : styleOption.styleDark.colorSecondary }; /* var(--color-secondary); */
-    color: ${ !isDark ? styleOption.style.colorButtonText : styleOption.styleDark.colorButtonText }; /* var(--color-button-text); */
+    background: ${ props => props.theme.colors.colorSecondary }; /* var(--color-secondary); */
+    color: ${ props => props.theme.colors.colorButtonText }; /* var(--color-button-text); */
     border: 0;
     border-radius: 0.8rem;
     cursor: pointer;
@@ -79,7 +76,7 @@ export const Container = styled.div`
   }
 
   .teacher-item footer a:hover{
-    background: ${ !isDark ? styleOption.style.colorSecondaryDark : styleOption.styleDark.colorSecondaryDark }; /* var(--color-secondary-dark); */
+    background: ${ props => props.theme.colors.colorSecondaryDark }; /* var(--color-secondary-dark); */
   }
 
   @media(min-width: 700px){

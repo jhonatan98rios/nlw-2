@@ -1,7 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import styleOption from './style'
-
-let isDark = true
 
 export default createGlobalStyle`
   *{
@@ -11,7 +8,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${ !isDark ? styleOption.style.colorBackground : styleOption.styleDark.colorBackground }; /* var(--color-background); */
+    background-color: ${ props => props.theme.colors.colorBackground }
   }
 
   #root {
@@ -24,7 +21,7 @@ export default createGlobalStyle`
     /*  Instalar as fontes Archivo e Poppins  */
     /* font: 500 1.6rem Poppins; */
     font: 500 1.6rem Arial;
-    color: ${ !isDark ? styleOption.style.colorTextBase : styleOption.styleDark.colorTextBase }; /* var(--color-text-base); */
+    color: ${ props => props.theme.colors.colorTextBase };
   }
 
   .container {
@@ -36,5 +33,11 @@ export default createGlobalStyle`
     :root {
       font-size: 62.5%;
     }
+  }
+
+  .switcher{
+    position: absolute !important;
+    top: 40px;
+    right: 40px;
   }
 `

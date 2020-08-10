@@ -1,13 +1,10 @@
 import styled from 'styled-components';
-import styleOption from '../../assets/styles/style.js'
-
-let isDark = true
 
 export const Container = styled.div`
   .page-header {
     display: flex;
     flex-direction: column;
-    background-color: ${ !isDark ? styleOption.style.colorPrimary : styleOption.styleDark.colorPrimary }; /* var(--color-primary); */
+    background-color: ${ props => props.theme.colors.colorPrimary }; /* var(--color-primary); */
   }
 
   .page-header .top-bar-container{
@@ -16,7 +13,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: ${ !isDark ? styleOption.style.colorTextInPrimary : styleOption.styleDark.colorTextInPrimary }; /* var(--color-text-in-primary); */
+    color: ${ props => props.theme.colors.colorTextInPrimary }; /* var(--color-text-in-primary); */
     padding: 1.6rem 0;
   }
 
@@ -43,14 +40,14 @@ export const Container = styled.div`
   .page-header .header-content strong {
     font: 500 3.6rem arial;
     line-height: 4.2rem;
-    color: ${ !isDark ? styleOption.style.colorTitleInPrimary : styleOption.styleDark.colorTitleInPrimary }; /* var(--color-title-in-primary) */
+    color: ${ props => props.theme.colors.colorTitleInPrimary }; /* var(--color-title-in-primary) */
   }
 
   .page-header .header-content p {
     max-width: 30rem;
     font-size: 1.6rem;
     line-height: 2.6rem;
-    color: ${ !isDark ? styleOption.style.colorTextInPrimary : styleOption.styleDark.colorTextInPrimary }; /* var(--color-text-in-primary); */
+    color: ${ props => props.theme.colors.colorTextInPrimary }; /* var(--color-text-in-primary); */
     margin-top: 2.4rem;
   }
 
